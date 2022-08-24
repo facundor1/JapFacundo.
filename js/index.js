@@ -1,4 +1,11 @@
 document.addEventListener("DOMContentLoaded", function(){
+    if (extraerDeLocal("bandera") == 1){
+    }
+    else {
+        window.location="login.html"
+    }
+
+
     document.getElementById("autos").addEventListener("click", function() {
         localStorage.setItem("catID", 101);
         window.location = "products.html"
@@ -12,3 +19,4 @@ document.addEventListener("DOMContentLoaded", function(){
         window.location = "products.html"
     });
 });
+

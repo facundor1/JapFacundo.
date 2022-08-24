@@ -39,3 +39,21 @@ let getJSONData = function(url){
         return result;
     });
 }
+
+function guardarEnLocal (nombre, objeto) {
+  let ab = JSON.stringify(objeto)
+  sessionStorage.setItem(nombre,ab)
+}
+function elimDeLocal (nombre) {
+sessionStorage.removeItem(nombre)
+}
+
+function extraerDeLocal (nombre) {
+  let a =sessionStorage.getItem(nombre)
+return JSON.parse(a)
+}
+
+
+
+
+
