@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function(){
-    if (extraerDeLocal("bandera") == 1){
+    if (extraerDeSession("bandera") == 1){
     }
     else {
         window.location="login.html"

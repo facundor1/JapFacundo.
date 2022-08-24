@@ -11,7 +11,7 @@ document.getElementById("login1").addEventListener("click", function () {
         contrasenia.style.borderColor = "red";
         document.getElementById("error2").innerHTML = "Ingrese su contraseña"
     }
-    guardarEnLocal("bandera",1)
+    guardarEnSession("bandera",1)
 });
 
 

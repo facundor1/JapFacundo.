@@ -40,20 +40,31 @@ let getJSONData = function(url){
     });
 }
 
-function guardarEnLocal (nombre, objeto) {
+function guardarEnSession (nombre, objeto) {
   let ab = JSON.stringify(objeto)
   sessionStorage.setItem(nombre,ab)
 }
-function elimDeLocal (nombre) {
+function elimDeSession(nombre) {
 sessionStorage.removeItem(nombre)
 }
 
-function extraerDeLocal (nombre) {
+function extraerDeSession (nombre) {
   let a =sessionStorage.getItem(nombre)
 return JSON.parse(a)
 }
 
+function guardarEnLocal (nombre, objeto) {
+  let ab = JSON.stringify(objeto)
+  localStorage.setItem(nombre,ab)
+}
+function elimDeLocal (nombre) {
+localStorage.removeItem(nombre)
+}
 
+function extraerDeLocal (nombre) {
+  let a =localStorage.getItem(nombre)
+return JSON.parse(a)
+}
 
 
 
