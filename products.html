@@ -30,24 +30,31 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" id="MostUser">
           </li>
         </ul>
       </div>
     </div>
   </nav>
-  <main class="pb-5 container" >
+  <main class="pb-5 container">
     <br>
-      <h1 id="tit1"> Productos</h1>
-      <h2 id="namCat"> </h2>
-      <br>
-    <table>
+    <h1 id="tit1"> Productos</h1>
+    <h2 id="namCat"> </h2>
+    <br>
+    <span id="ordenador"><input type="button" name="" id="valAsc" value="↑$"> <input type="button" id="valDesc" value="↓$"> <input type="button" id="relevancia" value="☆"></span>
+    <br>
+    <input type="text" id="search" placeholder="Buscar por nombre"> 
+    <div id="formii">  <span id="sp1">Precio </span> <input class="formi" type="number" placeholder="min." id="filtromin">
+      <input class="formi" type="number" placeholder="max." id="filtromax"> <input type="button" value="Filtrar"
+        id="filtro1"> <span id="filtrolimp"> <input type='button' id="limpiar" value="limpiar"></span>
+    </div>
+    <table id="tabb">
       <thead>
       </thead>
       <tbody id="dataT">
-        
+
       </tbody>
-  </table>
+    </table>
 
   </main>
   <footer class="text-muted">

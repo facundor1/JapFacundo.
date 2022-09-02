@@ -193,9 +193,17 @@ a.custom-card:hover {
   text-align: center;
   font-size: 30px;
 }
+
 #namCat {
   text-align: center;
   font-size: 20px;
+}
+
+#tabb {
+  margin-left: 100px;
+  text-align: center;
+  vertical-align: center;
+  width: 90%;
 }
 
 #tab11 {
@@ -203,13 +211,13 @@ a.custom-card:hover {
   display: block;
   text-align: center;
 }
+
 #dataT {
   color: rgb(62, 62, 62);
   text-align: center;
   border: 1px solid black;
   background-color: rgb(227, 226, 226);
- border-spacing: 1px;
-
+  border-spacing: 1px;
 }
 
 #dataT tr {
@@ -217,42 +225,49 @@ a.custom-card:hover {
 }
 
 #dataT img {
-height: 150px;
-margin-left: 5px;
-margin-right: 5px;
-margin-block: 5px;
-border: 5px outset white;
+  height: 150px;
+  margin-left: 10px;
+  margin-right: 5px;
+  margin-block: 5px;
+  border: 5px outset white;
 }
 
 td.modelo {
-  font-size:  15px;
+  font-size: 15px;
 }
+
 td.unida {
   font-size: 15px;
 }
+
 b.blac {
   font-size: 20px;
   vertical-align: top;
 }
+
 #imglog {
   height: 200px;
   display: block;
   margin: auto;
 }
+
 #nombreUs {
 
   display: block;
   margin: auto;
 }
+
 #contraUs {
   display: block;
   margin: auto;
 }
+
 label.lb1 {
   text-align: center;
   display: block;
   margin: auto;
 }
+
 #login1 {
   padding: 0.5%;
   border: 0px;
@@ -262,6 +277,7 @@ label.lb1 {
   margin: auto;
   color: white;
 }
+
 #error1 {
   text-align: center;
   display: block;
@@ -274,4 +290,60 @@ label.lb1 {
   display: block;
   margin: auto;
   color: red;
+}
+
+#MostUser {
+  display: block;
+  margin-top: 10px;
+  color: white;
+}
+
+#formii {
+  margin-left: 880px;
+  margin-bottom: 9px;
+  display: block;
+
+}
+
+#filtromin {
+  height: 25px;
+  width: 80px;
+
+}
+
+#filtromax {
+  margin-left: 10px;
+  height: 25px;
+  width: 80px;
+}
+
+#sp1 {
+  margin-right: 9px;
+}
+
+#filtro1 {
+  height: 27.5px;
+  width: 80px;
+  background-color: #e3e4e5;
+  text-align: center;
+  border-radius: 3px;
+  margin-left: 5px;
+}
+#ordenador {
+  display: block;
+  margin-left: 1100px;
+}
+#limpiar {
+  border: none;
+  background-color: white;
+  color: blue;
+  text-decoration:underline ;
+  text-decoration-color: blue;
+}
+#search {
+  display: block;
+  margin-left: 770px;
+  margin-bottom: 20px;
+  width: 500px;
+  text-align: center;
 }

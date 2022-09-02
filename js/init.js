@@ -39,6 +39,7 @@ let getJSONData = function(url){
         return result;
     });
 }
+// Funciones que actualizan el local y el session storage.
 
 function guardarEnSession (nombre, objeto) {
   let ab = JSON.stringify(objeto)
@@ -65,6 +66,15 @@ function extraerDeLocal (nombre) {
   let a =localStorage.getItem(nombre)
 return JSON.parse(a)
 }
+// 
+
+// Sirve para colocar el e-mail en las páginas
+document.addEventListener("DOMContentLoaded", function(){
+  let NomUS = document.getElementById("MostUser")
+  console.log(extraerDeSession("User"))
+  NomUS.innerHTML= extraerDeSession("User")
+})
+
 
 
 
