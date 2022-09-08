@@ -329,21 +329,97 @@ label.lb1 {
   border-radius: 3px;
   margin-left: 5px;
 }
+
 #ordenador {
   display: block;
   margin-left: 1100px;
 }
+
 #limpiar {
   border: none;
   background-color: white;
   color: blue;
-  text-decoration:underline ;
+  text-decoration: underline;
   text-decoration-color: blue;
 }
+
 #search {
   display: block;
   margin-left: 770px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   width: 500px;
   text-align: center;
+  border-radius: 5px;
+  border-color: gainsboro;
+}
+
+.redirije {
+  display: block;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 50px;
+
+}
+
+.infoTit {
+  font-size: xx-large;
+  color: #4b4c4c;
+  display: block;
+  margin-top: -350px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.infoSubtit {
+  font-weight: bold;
+}
+
+.tablaInfo {
+  margin-left: 10px;
+}
+#tablaCom {
+  margin-left: 10px;
+}
+#comentario tr td {
+  border: 1px black solid;
+  margin-left: 20px;
+ 
+}
+
+
+#datoPro img {
+  height: 300px;
+  width: 300px;
+  margin:5px;
+}
+
+#datoPro tr td {
+  border: 2px black solid;
+ 
+}
+
+b.nmUS {
+  color: #0087F7;
+}
+.ita{
+  font-style: italic;
+}
+
+.checked {
+  color: orange;
+}
+.unchecked {
+  color:gray;
+}
+
+#button1{
+  margin-top: 10px;
+  padding: 0.5%;
+  border: 0px;
+  border-radius: 3px;
+  background-color: rgb(21, 98, 252);
+  color: white;
+}
+.correg{
+  margin-left: 10px;
 }

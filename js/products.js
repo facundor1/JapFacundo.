@@ -3,6 +3,7 @@ const URL1 = "https://japceibal.github.io/emercado-api/cats_products/" + extraer
 let minValor = undefined
 let maxValor = undefined
 let search = undefined
+let ident = undefined
 document.addEventListener("DOMContentLoaded", function () {
     getJSONData(URL1).then(function (respuesta) {
         if (respuesta.status === "ok") {
@@ -10,34 +11,35 @@ document.addEventListener("DOMContentLoaded", function () {
             mostrarCategorias(categoriaProducto)
 
 
-        document.getElementById("valAsc").addEventListener("click",function(){
-            ordenarPorValorMay(categoriaProducto)
-            mostrarCategorias(categoriaProducto)
-        })
-        document.getElementById("valDesc").addEventListener("click",function(){
-            ordenarPorValorMen(categoriaProducto)
-            mostrarCategorias(categoriaProducto)
-        })
-        document.getElementById("relevancia").addEventListener("click",function(){
-            ordenarPorRelevancia(categoriaProducto)
-            mostrarCategorias(categoriaProducto)
-        })
-        //buscador por palabras en tiempo real
-        document.getElementById("search").addEventListener("input", function(){
-         search= document.getElementById("search").value
-         //transformar en minuscula la palabra
-         search.toLowerCase()
-         mostrarCategorias(categoriaProducto)
-        })
+            document.getElementById("valAsc").addEventListener("click", function () {
+                ordenarPorValorMay(categoriaProducto)
+                mostrarCategorias(categoriaProducto)
+            })
+            document.getElementById("valDesc").addEventListener("click", function () {
+                ordenarPorValorMen(categoriaProducto)
+                mostrarCategorias(categoriaProducto)
+            })
+            document.getElementById("relevancia").addEventListener("click", function () {
+                ordenarPorRelevancia(categoriaProducto)
+                mostrarCategorias(categoriaProducto)
+            })
+            //buscador por palabras en tiempo real
+            document.getElementById("search").addEventListener("input", function () {
+                search = document.getElementById("search").value
+                //transformar en minuscula la palabra
+                search.toLowerCase()
+                mostrarCategorias(categoriaProducto)
+            })
         }
         //limpiar filtros
-        document.getElementById("limpiar").addEventListener("click", function(){
+        document.getElementById("limpiar").addEventListener("click", function () {
             document.getElementById("filtromin").value = ""
             document.getElementById("filtromax").value = ""
-            minValor= undefined 
-            maxValor= undefined
+            minValor = undefined
+            maxValor = undefined
             mostrarCategorias(categoriaProducto)
-        })        
+        })
+        document.getElementById
     })
 })
 //Función que muestra los productos
@@ -47,27 +49,35 @@ function mostrarCategorias(arreglo) {
     let row = "";
     for (let modelo of arreglo.products) {
         imag = `<img  src= ` + modelo.image + `> `
-        a= modelo.name.toLowerCase()  
+        a = modelo.name.toLowerCase()
         // Esta linea filtra los datos del objeto segun el costo y las condiciones min y max
-        if (!(modelo.cost > maxValor )&& !(modelo.cost < minValor)){
-        // Filtrado de productos por palabras
-        if (a.includes(search)||search== undefined || search == ""){
-        row += `
+        if (!(modelo.cost > maxValor) && !(modelo.cost < minValor)) {
+            // Filtrado de productos por palabras
+            if (a.includes(search) || search == undefined || search == "") {
+                row += `     
+        
+               
                        <tr>
                        <td>  ${imag}  </td>
                        <td class= 'modelo'>  <b class="blac"> ${modelo.name} - ${modelo.currency} ${modelo.cost} </b> <br> ${modelo.description} </td>
-                       <td class= "unida"> <b> Vendidos <br> ${modelo.soldCount} </b> </td> 
+                       <td class= "unida"> <b> Vendidos <br> ${modelo.soldCount} </b> </td>
+                       <td> <input type='button' value= "Ver más" class="redirije" onclick="setProductID(${modelo.id})"
                        </tr>
                        `
-        }}
-    document.getElementById("dataT").innerHTML = row
-    }}
+            }
+        }
+        document.getElementById("dataT").innerHTML = row
+    }
+}
 
-
+function setProductID(id) {
+    sessionStorage.setItem("productID", id);
+    window.location = "product-info.html"
+}
 
 // ordena de menor a mayor
 function ordenarPorValorMen(lista) {
-   lista.products.sort(function (a, b) {
+    lista.products.sort(function (a, b) {
         if (a.cost > b.cost) { return +1 }
         if (a.cost < b.cost) { return -1 }
         return 0
@@ -80,16 +90,16 @@ function ordenarPorValorMay(lista) {
     lista.products.sort(function (a, b) {
         if (a.cost < b.cost) { return +1 }
         if (a.cost > b.cost) { return -1 }
-      return 0
+        return 0
     }
     )
 }
 //Ordena por relevancia (+ vendido primero)
 function ordenarPorRelevancia(lista) {
     lista.products.sort(function (a, b) {
-        if (a.soldCount < b.soldCount ) { return +1 }
-        if (a.soldCount > b.soldCount ) { return -1 }
-      return 0
+        if (a.soldCount < b.soldCount) { return +1 }
+        if (a.soldCount > b.soldCount) { return -1 }
+        return 0
     }
     )
 }
