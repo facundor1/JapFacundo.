@@ -68,11 +68,20 @@ return JSON.parse(a)
 }
 // 
 
-// Sirve para colocar el e-mail en las páginas
+// Sirve para colocar el e-mail en las páginas con el menu deplegable
 document.addEventListener("DOMContentLoaded", function(){
   let NomUS = document.getElementById("MostUser")
-  console.log(extraerDeSession("User"))
-  NomUS.innerHTML= extraerDeSession("User")
+  let desplegable= `<div class="btn-group">
+  <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    ${extraerDeSession("User")}
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+    <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+    <li><a class="dropdown-item" href="login.html" onclick="elimDeSession("User")">Cerrar Session</a></li>
+  </ul>
+</div>`
+  NomUS.innerHTML= desplegable
 })
 
 

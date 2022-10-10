@@ -20,6 +20,6 @@ document.getElementById("login1").addEventListener("click", function () {
         nombre.style.borderColor = "red";
     }
     guardarEnSession("bandera",1)
-
+   
 });
 
